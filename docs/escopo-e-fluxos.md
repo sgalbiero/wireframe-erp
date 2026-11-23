@@ -9,7 +9,7 @@ Disponibilizar acesso direto a **Produtos**, **Estoque** e **Vendas** em computa
 ## 1. Cadastro de produto
 
 1. Acessar Produtos e iniciar cadastro.
-2. Informar nome, preço de custo e preço de venda; adicionar as cores e, em seguida, os tamanhos para cada cor, em etapas separadas; salvar.
+2. Informar nome, preço de custo e preço de venda; adicionar as cores e, em seguida, informar uma única vez os tamanhos disponíveis para todas elas; salvar.
 3. Validar campos obrigatórios e mostrar mensagens junto aos campos quando necessário.
 4. Confirmar o salvamento e oferecer **Adicionar estoque** e uma opção para permanecer na área de produtos.
 5. Se aceitar, abrir Estoque com o produto ou combinação recém-cadastrada pré-selecionada quando possível.

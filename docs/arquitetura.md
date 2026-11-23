@@ -2,44 +2,49 @@
 
 ## Diretrizes
 
-Usar Node.js e Express para um wireframe navegável de baixa fidelidade. Organizar o código em módulos desacoplados, mantendo regras de negócio e armazenamento independentes das rotas HTTP e da interface. Adotar a solução mais simples que permita demonstrar os fluxos definidos em [requisitos](requisitos.md), sem infraestrutura de produção desnecessária.
+O projeto é um wireframe navegável de baixa fidelidade implementado como aplicação estática com React, TypeScript e Vite. A solução roda inteiramente no navegador, pode ser publicada na Vercel e não depende de backend, banco de dados ou serviços externos.
 
-## Organização sugerida
+Manter regras e estado separados da apresentação quando isso simplificar os fluxos. Evitar infraestrutura ou abstrações de produção que não contribuam para os testes do protótipo.
+
+## Organização
 
 ```text
 src/
-  app.js                 # configuração do Express
-  server.js              # inicialização do servidor
-  modules/
-    products/            # produtos e combinações de cor/tamanho
-    inventory/           # saldo, entrada e saída
-    labels/              # códigos e impressão simbólica
-    sales/               # venda e listagem
-  shared/                # utilidades efetivamente compartilhadas
-  views/                 # telas ou templates simples
-  public/                # estilos e scripts de interface
+  App.tsx                  # composição, navegação e estado compartilhado
+  components/ui.tsx        # componentes reutilizáveis de interface
+  features/overview/       # visão geral
+  features/products/       # cadastro e listagem de produtos
+  features/inventory/      # estoque e etiquetas
+  features/sales/          # busca, carrinho e histórico de vendas
+  data.ts                  # dados fictícios iniciais
+  storage.ts               # leitura, gravação e restauração do localStorage
+  types.ts                 # tipos de produto, combinação, venda e navegação
+  utils.ts                 # formatação, identificadores e normalização de busca
+  styles.css               # linguagem visual e responsividade
+  main.tsx                 # inicialização da aplicação
 ```
 
-A estrutura orienta responsabilidades, sem exigir arquivos vazios. Rotas/controladores tratam HTTP, serviços coordenam regras e repositórios isolam armazenamento. Evitar acesso direto à implementação interna de outro módulo; expor funções ou contratos claros. Não criar abstrações sem uso.
+Cada pasta em `features/` concentra o fluxo e as regras de apresentação de um domínio. `App.tsx` não implementa telas; ele apenas mantém o estado persistido, controla a navegação e conecta os módulos.
 
-## Modelo conceitual inicial
+O Vite produz a versão estática em `dist/`. A aplicação abre Produtos por padrão, mantendo Visão geral, Estoque e Vendas acessíveis pela navegação principal.
 
-- **Produto:** nome, preços de custo e venda e conjunto de combinações cadastradas de cor e tamanho. O cadastro apresenta cores antes dos tamanhos.
-- **Combinação:** identificador estável, cor, tamanho e associação ao produto. Apenas combinações existentes devem ser selecionáveis.
-- **Saldo:** quantidade atual por combinação. Entrada e saída alteram o saldo, sem necessidade de registro detalhado ou auditoria.
-- **Código de etiqueta:** vínculo inequívoco com a combinação vendável. Um código identifica a combinação e é compartilhado por todas as suas unidades.
-- **Venda:** identificador, data, itens, quantidades, preços aplicados e total. A conclusão baixa os saldos e torna a venda visível na listagem.
+## Modelo conceitual
 
-## Consistência e limites
+- **Produto:** nome, preços de custo e venda e combinações cadastradas de cor e tamanho.
+- **Combinação:** identificador estável, cor, tamanho, saldo e SKU no formato `SKU-{produto}-{cor}-{tamanho}`.
+- **Saldo:** quantidade atual por combinação. Entrada soma e saída subtrai.
+- **Etiqueta:** prévia simbólica associada a uma entrada; unidades da mesma combinação compartilham o SKU.
+- **Venda:** identificador, data, itens, quantidades, preços aplicados e total. A conclusão reduz os saldos locais.
 
-- Validar quantidade inteira positiva e saldo suficiente no servidor, além da interface.
-- No fechamento, verificar novamente todos os saldos, atualizar estoque e registrar venda como uma única operação lógica. Evitar conclusão duplicada e alterações parciais em caso de falha.
-- A entrada deve ser confirmada antes do modal de impressão; fechar o modal não reverte o saldo. A impressão é simbólica e não deve chamar ou prometer integração física.
-- O código exibido na etiqueta simulada deve ser reconhecido pelo fluxo de venda. Permitir entrada manual além do leitor que funciona como teclado, sem alegar suporte a hardware não verificado.
-- Persistir produtos, saldos e vendas localmente após reinício; documentar o armazenamento adotado e como reiniciar os dados.
-- Armazenar valores monetários em centavos inteiros ou equivalente exato; preservar o preço aplicado em cada venda.
+## Persistência e limites
 
-## Preparação para implementação
+- O `localStorage` mantém os dados no mesmo navegador após recarregamento ou fechamento da página.
+- Dados não são sincronizados entre dispositivos, usuários ou navegadores.
+- A restauração dos dados de demonstração é explícita e confirmada pelo usuário.
+- Não há autenticação, impressão real, leitura por câmera, pagamento, integração fiscal ou garantias de concorrência multiusuário.
+- Valores monetários são armazenados como centavos inteiros.
+- Quantidades são inteiros positivos e nenhuma operação pode produzir saldo negativo.
 
-Registrar no README pré-requisitos, instalação, execução, endereço local, persistência e limitações reais. Não inserir segredos ou dados confidenciais de participantes no repositório. Verificar tecnicamente o fluxo completo, responsividade, acessibilidade básica, erros e consistência de estoque e venda; isso é diferente de realizar testes com participantes, que não ocorrerão agora. Escolher bibliotecas, mecanismo de armazenamento local e representação do código conforme a simplicidade necessária ao protótipo.
+## Verificação
 
+Executar `npm run build` e verificar cadastro, estoque, etiquetas, venda, restauração, recarregamento, teclado e layouts de computador e celular. Essas verificações técnicas não substituem testes de usabilidade com participantes.

@@ -6,7 +6,7 @@ Wireframe de baixa fidelidade: tons neutros, bordas simples, texto legível e hi
 
 ## Navegação e layout
 
-Produtos, Estoque e Vendas sempre acessíveis. Otimizar para computador com informações e ações principais visíveis sem excesso de etapas. Em celular, adaptar a largura, empilhar controles quando necessário, permitir leitura de tabelas sem cortar conteúdo e manter ações acessíveis ao toque. Não ocultar funções essenciais.
+Produtos, Estoque e Vendas sempre acessíveis. Otimizar para computador com as operações de cada etapa visíveis na mesma tela, sem exigir rolagem nas condições normais dos testes. Em celular ou quando houver muitos valores, adaptar a largura, empilhar controles e preservar a rolagem como contingência, sem ocultar funções essenciais.
 
 ## Acessibilidade
 
@@ -19,4 +19,4 @@ Produtos, Estoque e Vendas sempre acessíveis. Otimizar para computador com info
 
 ## Estados
 
-Em cada tela prever vazio, preenchimento, sucesso e erro. Explicar erros próximos da ação e indicar como corrigir. Em falha de servidor, manter entradas sempre que possível. Confirmar estoque e venda sem mensagens ambíguas.
+Em cada tela prever vazio, preenchimento, sucesso e erro. Explicar erros próximos da ação e indicar como corrigir. Em falha de armazenamento, manter entradas sempre que possível. Confirmar estoque e venda sem mensagens ambíguas.

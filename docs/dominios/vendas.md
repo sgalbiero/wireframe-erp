@@ -6,11 +6,12 @@ Apresentar listagem de vendas concluídas com identificador, data/hora e total, 
 
 ## Nova venda
 
-1. Destacar campo de código; dar foco inicial quando apropriado e aceitar texto seguido de Enter, inclusive digitado manualmente.
-2. Resolver código para produto, cor e tamanho. Incluir uma unidade por leitura válida; leituras repetidas incrementam a quantidade.
-3. Exibir itens, quantidade, preço unitário e subtotal, além do total. Permitir corrigir quantidades ou remover itens sem exigir leitura novamente.
-4. Informar código desconhecido e saldo insuficiente sem limpar carrinho; não prender o foco no campo.
-5. Ao concluir, validar novamente as quantidades e saldos no servidor, registrar venda e baixar estoque como operação única. Apresentar confirmação e a venda na listagem.
+1. Exibir os produtos pelo nome em um dropdown, sem exigir conhecimento do SKU e sem expandir verticalmente o card.
+2. Após selecionar o produto, exibir suas cores em um segundo dropdown. Ao selecionar a cor, mostrar automaticamente os tamanhos e saldos disponíveis como ações rápidas.
+3. Manter o SKU como alternativa recolhida: um código exato inclui diretamente sua combinação. Inclusões repetidas incrementam a quantidade.
+4. Exibir itens, quantidade, preço unitário e subtotal, além do total. Permitir corrigir quantidades ou remover itens sem exigir nova busca.
+5. Informar produto desconhecido e saldo insuficiente sem limpar carrinho; não prender o foco no campo.
+6. Ao concluir, validar novamente as quantidades e saldos, registrar venda e baixar estoque na mesma atualização do estado local. Apresentar confirmação e a venda na listagem.
 
 ## Regras
 
@@ -23,4 +24,4 @@ Apresentar listagem de vendas concluídas com identificador, data/hora e total, 
 
 ## Aceite
 
-Duas leituras do mesmo código mostram duas unidades. Uma venda concluída aparece na listagem com total correto e reduz o saldo em duas unidades, inclusive após reiniciar o servidor. Código inválido e tentativa de venda acima do saldo não alteram o estoque.
+Selecionar um produto pelo nome e uma cor mostra imediatamente os tamanhos disponíveis sem exigir o SKU. Duas inclusões da mesma variação mostram duas unidades. Uma venda concluída aparece na listagem com total correto e reduz o saldo em duas unidades, inclusive após recarregar a página. Produto ou código inválido e tentativa de venda acima do saldo não alteram o estoque.

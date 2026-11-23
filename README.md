@@ -1,6 +1,6 @@
 # Guia do projeto
 
-Planejamento de um wireframe navegável de baixa fidelidade para um trabalho de Interação Humano-Computador (IHC), utilizando Node.js e Express com arquitetura modular e desacoplada. A referência acadêmica é `Projeto Final IHC - Do problema à solução .pdf`.
+Wireframe navegável de baixa fidelidade para um trabalho de Interação Humano-Computador (IHC), implementado com React, TypeScript e Vite. A referência acadêmica é `Projeto Final IHC - Do problema à solução .pdf`.
 
 O potencial cliente identificado é a loja de calçados LUIZERA, na Rua Pará de Minas, 311, Centro (Fartura), Nova Serrana - MG. A proposta é simplificar o controle de vendas e as atividades associadas: cadastro de produto com nome, preços de custo e venda, cores e tamanhos; entrada e saída de estoque; impressão simbólica de etiquetas; e venda rápida por código. A interface prioriza computador e também deve ser acessível em dispositivos móveis.
 
@@ -15,8 +15,19 @@ Consulte o [índice completo por responsabilidade](docs/README.md), incluindo es
 - [Pendências acadêmicas](docs/pendencias.md): entregáveis previstos pelo trabalho.
 - [Pesquisa e testes](docs/pesquisa-e-testes.md): modelos para uso futuro.
 
-## Estado atual
+## Execução
 
-Há documentação inicial; ainda não há aplicação implementada neste repositório. Testes com participantes não serão realizados neste momento. Não presumir entrevistas, resultados ou validações sem registros reais. Verificações técnicas durante a implementação continuam necessárias.
+```bash
+npm install
+npm run dev
+```
+
+Para gerar a versão estática usada na Vercel, execute `npm run build`. Os arquivos são produzidos em `dist/`.
+
+## Persistência e demonstração
+
+Produtos, saldos e vendas são armazenados no `localStorage` do navegador. Os dados não são compartilhados entre dispositivos ou navegadores. A primeira abertura carrega dados de demonstração, e a interface possui uma ação para restaurá-los.
+
+O protótipo não usa backend, banco de dados, autenticação, impressão real ou integração com leitor. O campo SKU aceita digitação e dispositivos que funcionem como teclado.
 
 

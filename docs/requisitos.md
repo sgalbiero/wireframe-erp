@@ -10,7 +10,7 @@ O uso principal será em computador. A interface também deve ser utilizável e 
 
 ### RF01 — Produtos
 
-- Permitir cadastrar um produto com **nome, preço de custo e preço de venda**; adicionar primeiro as cores e, depois, os tamanhos em etapas separadas. Associar explicitamente cada tamanho à cor correspondente.
+- Permitir cadastrar um produto com **nome, preço de custo e preço de venda**; adicionar primeiro as cores e, depois, informar os tamanhos uma única vez, em etapas separadas. Criar cada combinação entre as cores e os tamanhos informados, inicialmente sem estoque.
 - Após salvar, confirmar o cadastro e recomendar o redirecionamento para adicionar estoque, permitindo que o usuário aceite ou permaneça na área de produtos.
 - Disponibilizar os produtos cadastrados para seleção na movimentação de estoque.
 - Impedir combinações duplicadas do mesmo produto, cor e tamanho e apresentar mensagem clara.
@@ -46,7 +46,7 @@ O uso principal será em computador. A interface também deve ser utilizável e 
 - Layout adequado a computador e adaptável a celular, sem perda das ações essenciais.
 - Navegação por teclado, foco visível, rótulos associados a campos e modal operável por teclado; mensagens e estados devem ser perceptíveis sem depender apenas de cor.
 - Manter o foco na entrada de código quando adequado, sem impedir correções ou navegação acessível.
-- Os dados de produtos, saldos e vendas devem persistir após reiniciar o servidor. A impressão é simulada; nenhuma integração com impressora, pagamento ou serviços externos é exigida.
+- Os dados de produtos, saldos e vendas devem persistir no mesmo navegador após recarregar ou fechar a página. A impressão é simulada; nenhuma integração com impressora, pagamento ou serviços externos é exigida.
 - Não realizar testes com participantes neste momento. A documentação de pesquisa e avaliação permanece para uma fase futura.
 
 ## Fora do escopo atual

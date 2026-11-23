@@ -9,6 +9,7 @@ Simular a impressão das etiquetas após uma entrada de estoque e fornecer códi
 - Cada combinação produto/cor/tamanho possui um código estável e único no protótipo; unidades iguais compartilham o mesmo código.
 - Uma entrada de N unidades gera uma representação simbólica de N etiquetas da combinação. Não criar identificadores individuais por unidade.
 - Após confirmar entrada, abrir modal com produto, cor, tamanho, quantidade e código legível. A representação pode agrupar etiquetas idênticas em uma prévia com quantidade, sem renderizar milhares de elementos.
+- Quando a entrada contiver várias combinações, reunir todas as prévias em um único modal e oferecer uma única ação para imprimir simbolicamente o lote completo.
 - **IMPRIMIR** executa ação simbólica e mostra confirmação explícita. Não chamar impressão do navegador nem alegar impressão física.
 - Fechar ou cancelar o modal não reverte a entrada já salva. O usuário deve ser informado desse comportamento.
 - O código deve ser copiável ou digitável para simular a leitura na venda. Não prometer um padrão de código de barras ou compatibilidade com hardware sem implementação e verificação.
