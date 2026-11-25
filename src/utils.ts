@@ -6,7 +6,12 @@ export function formatMoney(cents: number) {
 }
 
 export function parseMoney(value: string) {
-  const normalized = value.replace(/\s/g, '').replace(/\./g, '').replace(',', '.')
+  const text = value.replace(/\s/g, '')
+  if (!text) return NaN
+  let normalized: string
+  if (text.includes(',')) normalized = text.replace(/\./g, '').replace(',', '.')   // 1.234,56
+  else if (/^\d+\.\d{1,2}$/.test(text)) normalized = text                          // 89.90
+  else normalized = text.replace(/\./g, '')                                         // 1.234
   const parsed = Number(normalized)
   return Number.isFinite(parsed) ? Math.round(parsed * 100) : NaN
 }

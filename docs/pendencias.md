@@ -7,7 +7,7 @@ O potencial cliente informado é a loja de calçados LUIZERA, situada na Rua Par
 ## Trabalho acadêmico
 
 1. **Identificação:** registrar perfis profissionais e disponibilidade dos participantes. Uma loja identificada não substitui a exigência de entrevistas individuais.
-2. **Pesquisa:** o PDF exige pelo menos cinco entrevistas individuais com profissionais da área, gravadas com autorização expressa. Documentar roteiro, perfis, resumos, problemas, análise e gravações com acesso restrito. Não presumir que um único estabelecimento necessariamente forneça cinco profissionais elegíveis.
+2. **Pesquisa:** o PDF exige de três a cinco entrevistas individuais com profissionais da área, conforme orientação do professor, gravadas com autorização expressa. Documentar roteiro, perfis, resumos, problemas, análise e gravações com acesso restrito. Não presumir que um único estabelecimento necessariamente forneça cinco profissionais elegíveis.
 3. **Problema e solução:** fundamentar frequência, impacto, práticas atuais, justificativa e benefícios com evidências reais das entrevistas.
 4. **Wireframe:** implementar e documentar telas, funcionalidades e navegação de baixa fidelidade conforme os requisitos.
 5. **Validação futura:** apresentar a proposta aos profissionais entrevistados e registrar concordâncias, discordâncias e ajustes.

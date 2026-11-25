@@ -32,7 +32,7 @@ Após a entrada confirmada, identificar a combinação e informar que a impress�
 ## 4. Venda e listagem
 
 1. Em Vendas, exibir listagem e ação **Nova venda**. Se não houver vendas, indicar isso claramente.
-2. Iniciar venda e apresentar campo de código em destaque; permitir leitura por dispositivo que envia texto e entrada manual.
+2. Iniciar venda, selecionar o produto pelo nome e a cor para escolher o tamanho; manter o código da etiqueta como alternativa recolhida, aceitando leitor que envia texto ou digitação manual.
 3. Ao receber um código válido, identificar nome, cor e tamanho e incluir o item. Bipes repetidos da mesma combinação aumentam a quantidade, desde que haja saldo.
 4. Exibir itens, quantidades, preços de venda e total; permitir corrigir ou remover itens. Informar código desconhecido ou saldo insuficiente sem limpar a venda.
 5. Ao concluir, validar novamente o saldo, efetuar baixa uma única vez, confirmar e exibir a venda na listagem.

@@ -18,7 +18,7 @@ export function Overview({ products, stock, sales, lowStock, outOfStock, onNavig
         <div className="quick-actions">
           <QuickAction title="Cadastrar produto" text="Crie o produto e informe as cores e os tamanhos disponíveis." onClick={() => onNavigate('products')} />
           <QuickAction title="Movimentar estoque" text="Registre entrada ou saída de uma combinação existente." onClick={() => onNavigate('inventory')} />
-          <QuickAction title="Iniciar venda" text="Use o código SKU para adicionar itens e concluir a venda." onClick={() => onNavigate('sales')} />
+          <QuickAction title="Iniciar venda" text="Escolha produto, cor e tamanho, ou use o código da etiqueta, e conclua a venda." onClick={() => onNavigate('sales')} />
         </div>
       </section>
     </>

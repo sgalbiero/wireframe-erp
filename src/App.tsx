@@ -12,7 +12,8 @@ function App() {
   const [screen, setScreen] = useState<Screen>(() => {
     const fromHash = window.location.hash.replace('#/', '') as Screen
     if (['overview', 'products', 'inventory', 'sales'].includes(fromHash)) return fromHash
-    const saved = window.localStorage.getItem('luizera-last-screen') as Screen | null
+    let saved: Screen | null = null
+    try { saved = window.localStorage.getItem('luizera-last-screen') as Screen | null } catch { /* ignora */ }
     return saved && ['overview', 'products', 'inventory', 'sales'].includes(saved) ? saved : 'overview'
   })
   const [menuOpen, setMenuOpen] = useState(false)
@@ -23,7 +24,7 @@ function App() {
 
   useEffect(() => saveData(data), [data])
   useEffect(() => {
-    window.localStorage.setItem('luizera-last-screen', screen)
+    try { window.localStorage.setItem('luizera-last-screen', screen) } catch { /* ignora */ }
     const expectedHash = `#/${screen}`
     if (window.location.hash !== expectedHash) window.history.replaceState({ screen }, '', expectedHash)
   }, [screen])
