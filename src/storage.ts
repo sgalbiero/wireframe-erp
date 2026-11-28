@@ -14,7 +14,11 @@ export function loadData(): AppData {
 }
 
 export function saveData(data: AppData): void {
-  window.localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
+  try {
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
+  } catch {
+    // Sem armazenamento disponível: o protótipo continua só em memória.
+  }
 }
 
 export function resetData(): AppData {

@@ -29,7 +29,6 @@ export function Inventory({ data, setData, notify, initialProductId = '' }: { da
   function changeType(nextType: 'entry' | 'exit') {
     setType(nextType)
     setError('')
-    if (nextType === 'exit') setEntryMode('single')
   }
 
   function changeEntryMode(mode: 'single' | 'bulk') {

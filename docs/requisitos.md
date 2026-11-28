@@ -33,7 +33,7 @@ O uso principal será em computador. A interface também deve ser utilizável e 
 ### RF04 — Vendas
 
 - Com estoque disponível, permitir iniciar uma nova venda pela tela **VENDAS**.
-- Priorizar um campo de leitura de código, pronto para receber rapidamente a entrada. A leitura reconhece automaticamente nome, cor e tamanho e adiciona a combinação à venda.
+- Permitir escolher produto, cor e tamanho pelo nome e manter o código da etiqueta como alternativa recolhida, pronta para receber leitura ou digitação. O código reconhece nome, cor e tamanho e adiciona a combinação à venda.
 - Permitir digitar o código como alternativa para dispositivos móveis e para testes sem leitor físico.
 - Exibir itens e quantidades da venda, permitir corrigir ou remover itens e concluir a operação.
 - Ao concluir, baixar o estoque correspondente, confirmar o resultado e apresentar a venda na listagem da tela **VENDAS**, com identificador, data e total e acesso aos itens e quantidades.
